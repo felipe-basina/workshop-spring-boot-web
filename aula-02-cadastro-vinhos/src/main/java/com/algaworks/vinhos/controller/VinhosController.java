@@ -38,6 +38,15 @@ public class VinhosController {
 		return modelAndView;
 	}
 	
+	@GetMapping
+	public ModelAndView listarVinhos(Vinho vinho) {
+		ModelAndView modelAndView = new ModelAndView("vinhos/lista-vinhos");
+		
+		modelAndView.addObject("vinhos", this.vinhos.findAll());
+		
+		return modelAndView;
+	}
+	
 	@PostMapping("/novo")
 	public ModelAndView salvar(@Valid Vinho vinho, BindingResult result,
 			RedirectAttributes attributes) {
