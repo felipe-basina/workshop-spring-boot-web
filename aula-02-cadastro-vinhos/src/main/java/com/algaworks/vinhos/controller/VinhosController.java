@@ -56,7 +56,7 @@ public class VinhosController {
 		
 		vinhos.save(vinho);
 		
-		attributes.addFlashAttribute("mensagem", "Vinho salvo com sucesso!");
+		attributes.addFlashAttribute("mensagem", "Vinho { " + vinho.getNome() + " } salvo com sucesso!");
 		
 		return new ModelAndView("redirect:/vinhos/novo");
 	}
